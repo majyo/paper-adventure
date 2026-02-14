@@ -1,0 +1,19 @@
+{
+  "name": "冒险者",
+  "level": 1,
+  "hp": 28,
+  "maxHp": 28,
+  "ac": 13,
+  "stats": {
+    "strength": 14,
+    "dexterity": 12,
+    "constitution": 13,
+    "intelligence": 10,
+    "wisdom": 11,
+    "charisma": 8
+  },
+  "inventory": ["short_sword", "leather_armor", "torch"],
+  "attacks": [
+    { "name": "短剑斩击", "stat": "strength", "damage": "1d6+2" }
+  ]
+}

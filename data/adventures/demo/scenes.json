@@ -1,0 +1,106 @@
+{
+  "village_inn": {
+    "id": "village_inn",
+    "title": "风暴旅店",
+    "text": "暴风雨之夜，你推开旅店的木门，温暖的炉火和嘈杂的人声扑面而来。角落里，一个老猎人正低声讲述着地窖里的怪事——据说旅店下方的古老地窖中，最近传出了奇怪的声响。\n\n吧台旁有一个上锁的旧木箱，似乎被人遗忘了很久。",
+    "choices": [
+      {
+        "text": "向老猎人打听地窖的事",
+        "nextScene": "cellar_entrance",
+        "setFlag": "talked_to_hunter"
+      },
+      {
+        "text": "尝试撬开上锁的木箱",
+        "skillCheck": { "skill": "dexterity", "dc": 12 },
+        "success": {
+          "nextScene": "cellar_entrance",
+          "addItem": "health_potion",
+          "text": "你灵巧地拨弄着锁芯，只听\"咔嗒\"一声，木箱打开了。里面有一瓶散发着淡红色光芒的药水。"
+        },
+        "failure": {
+          "nextScene": "cellar_entrance",
+          "text": "你摆弄了半天，锁纹丝不动。吧台后的老板娘投来了怀疑的目光，你只好作罢。"
+        }
+      }
+    ]
+  },
+  "cellar_entrance": {
+    "id": "cellar_entrance",
+    "title": "地窖入口",
+    "text": "你来到旅店后方的地窖入口。石阶向下延伸，消失在黑暗中。潮湿的空气中弥漫着霉味和一丝若有若无的腐臭。\n\n借着火把的光芒，你看到通道在前方分成了两条路：左边是一条狭窄的隧道，隐约能听到窸窣的声响；右边是一条更宽阔但完全黑暗的通道。",
+    "choices": [
+      {
+        "text": "走左边的狭窄隧道（窸窣声来源）",
+        "nextScene": "rat_tunnel"
+      },
+      {
+        "text": "走右边的黑暗通道（需要火把）",
+        "nextScene": "dark_passage",
+        "condition": { "hasItem": "torch" }
+      }
+    ]
+  },
+  "rat_tunnel": {
+    "id": "rat_tunnel",
+    "title": "老鼠隧道",
+    "text": "你弯腰钻进狭窄的隧道，脚下踩着碎石和不明物体。突然，前方传来尖锐的吱吱声——两只体型异常巨大的老鼠从黑暗中窜出，红色的眼睛在火光中闪烁！",
+    "combat": {
+      "enemies": ["giant_rat", "giant_rat"],
+      "onVictory": "boss_chamber",
+      "onDefeat": "defeat"
+    },
+    "choices": []
+  },
+  "dark_passage": {
+    "id": "dark_passage",
+    "title": "黑暗通道",
+    "text": "你举着火把小心翼翼地走进黑暗通道。墙壁上刻满了古老的符文，在火光下若隐若现。通道尽头似乎有一扇石门，但地面上散落着可疑的碎石...",
+    "choices": [
+      {
+        "text": "仔细观察地面（感知检定）",
+        "skillCheck": { "skill": "wisdom", "dc": 14 },
+        "success": {
+          "nextScene": "boss_chamber",
+          "addItem": "rusty_key",
+          "text": "你注意到地面上有一块松动的石板，小心地避开后，在石板下发现了一把生锈的钥匙。你安全地通过了通道。"
+        },
+        "failure": {
+          "nextScene": "boss_chamber",
+          "damage": 4,
+          "text": "你没有注意到地面的陷阱，一块石板突然塌陷！你跌了一跤，膝盖撞在石头上，受到了 4 点伤害。"
+        }
+      },
+      {
+        "text": "直接快步通过",
+        "nextScene": "boss_chamber"
+      }
+    ]
+  },
+  "boss_chamber": {
+    "id": "boss_chamber",
+    "title": "地窖深处",
+    "text": "你来到一个宽阔的地下大厅。大厅中央，一具身披残破铠甲的骷髅缓缓站起，空洞的眼眶中燃烧着幽绿色的火焰。它举起手中的锈蚀长剑，向你逼来！\n\n这就是地窖中怪声的源头——一个被黑暗力量驱使的骷髅战士。",
+    "combat": {
+      "enemies": ["skeleton_warrior"],
+      "onVictory": "victory",
+      "onDefeat": "defeat"
+    },
+    "choices": []
+  },
+  "victory": {
+    "id": "victory",
+    "title": "胜利",
+    "text": "骷髅战士轰然倒地，骨骸散落一地。幽绿色的火焰渐渐熄灭，大厅恢复了平静。\n\n在骷髅的残骸中，你发现了一枚散发着暗黑光芒的护符——这似乎就是驱使亡灵的源头。你将护符收入囊中，踏上了返回旅店的路。\n\n暴风雨已经停了。当你推开旅店大门时，晨光洒在你疲惫但坚毅的脸上。老猎人向你举起酒杯，村民们爆发出欢呼声。\n\n🏆 冒险完成！你成功清除了暗影地窖中的威胁。",
+    "choices": [],
+    "gameOver": true,
+    "victory": true
+  },
+  "defeat": {
+    "id": "defeat",
+    "title": "陨落",
+    "text": "黑暗吞噬了你的意识...\n\n当旅店的人们发现你时，你已经倒在冰冷的石地上。幸运的是，老猎人及时赶到，将你从地窖中救了出来。\n\n你在旅店的床上醒来，浑身酸痛。这次冒险以失败告终，但至少你还活着。也许下次，你会做好更充分的准备...\n\n💀 冒险失败。你被地窖中的怪物击败了。",
+    "choices": [],
+    "gameOver": true,
+    "victory": false
+  }
+}

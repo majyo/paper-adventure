@@ -1,0 +1,7 @@
+{
+  "id": "demo",
+  "title": "暗影地窖",
+  "description": "暴风雨之夜，一个神秘的地窖等待着勇敢的冒险者...",
+  "version": "1.0.0",
+  "startScene": "village_inn"
+}

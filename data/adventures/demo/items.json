@@ -1,0 +1,47 @@
+{
+  "short_sword": {
+    "id": "short_sword",
+    "name": "短剑",
+    "description": "一把锋利的短剑，适合近身战斗。",
+    "type": "weapon",
+    "consumable": false
+  },
+  "leather_armor": {
+    "id": "leather_armor",
+    "name": "皮甲",
+    "description": "轻便的皮革护甲，提供基本防护。",
+    "type": "armor",
+    "consumable": false
+  },
+  "torch": {
+    "id": "torch",
+    "name": "火把",
+    "description": "一支燃烧的火把，可以照亮黑暗的通道。",
+    "type": "tool",
+    "consumable": false
+  },
+  "health_potion": {
+    "id": "health_potion",
+    "name": "治疗药水",
+    "description": "一瓶散发着淡红色光芒的药水，饮用后可恢复生命。",
+    "type": "consumable",
+    "consumable": true,
+    "effect": {
+      "heal": 10
+    }
+  },
+  "rusty_key": {
+    "id": "rusty_key",
+    "name": "生锈的钥匙",
+    "description": "一把锈迹斑斑的铁钥匙，不知道能打开什么。",
+    "type": "key",
+    "consumable": false
+  },
+  "skeleton_amulet": {
+    "id": "skeleton_amulet",
+    "name": "骷髅护符",
+    "description": "从骷髅战士身上取下的暗黑护符，散发着不祥的气息。",
+    "type": "quest",
+    "consumable": false
+  }
+}

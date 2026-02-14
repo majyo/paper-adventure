@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e:*)",
+      "Bash(wc:*)",
+      "Bash(for f in /d/workspace/app_projects/paper-adventure/data/adventures/demo/*.json)",
+      "Bash(do echo \"Validating $f...\")",
+      "Bash(done)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

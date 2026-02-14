@@ -1,0 +1,39 @@
+{
+  "giant_rat": {
+    "id": "giant_rat",
+    "name": "巨型老鼠",
+    "hp": 12,
+    "ac": 12,
+    "stats": {
+      "strength": 8,
+      "dexterity": 14,
+      "constitution": 10,
+      "intelligence": 2,
+      "wisdom": 10,
+      "charisma": 4
+    },
+    "attacks": [
+      { "name": "啃咬", "toHit": 3, "damage": "1d4+1" }
+    ],
+    "xp": 25
+  },
+  "skeleton_warrior": {
+    "id": "skeleton_warrior",
+    "name": "骷髅战士",
+    "hp": 30,
+    "ac": 14,
+    "stats": {
+      "strength": 14,
+      "dexterity": 12,
+      "constitution": 14,
+      "intelligence": 6,
+      "wisdom": 8,
+      "charisma": 5
+    },
+    "attacks": [
+      { "name": "锈蚀长剑", "toHit": 4, "damage": "1d8+2" },
+      { "name": "盾击", "toHit": 3, "damage": "1d4+2" }
+    ],
+    "xp": 100
+  }
+}
